@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Github News Unfold
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  A user script that unfolds GitHub news.
 // @author       LovelyWei
 // @match        https://github.com/
@@ -28,9 +28,8 @@ const init = () => {
     });
 
     observer.observe(target, {
-        attributes: true,
         childList: true,
-        characterData: true,
+        subtree: true
     });
 };
 
